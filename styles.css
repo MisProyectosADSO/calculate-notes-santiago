@@ -84,15 +84,3 @@ button:hover {
     font-size: 20px;
   }
 }
-
-.badnote{
-color: black;
-}
-
-.regularnote{
-  color: orange;
-}
-
-.goodnote{
-color: green;
-}

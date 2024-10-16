@@ -18,7 +18,7 @@ function calculateNote() {
     let regularnote=`Gano la materia`
     let goodnote = `Tienes una nota sobre saliente, Ganas la materia`
     if (result<3.5){
-        answer.textContent = `Hola ${user} su nota es de: ${result} \n`+ `${badnote}` 
+        answer.textContent = `Hola ${user} su nota es de: ${result} \n`+ badnote
        answer.style.color='black'}
     else if (result>3.5 && result<4.5){
         answer.textContent = `Hola ${user} su nota es de: ${result} \n`+regularnote
@@ -28,4 +28,17 @@ function calculateNote() {
     answer.style.color='green'}
 else
 answer.textContent = `Nota Invalida, Revisa que alguno de los datos no sea mayor a 5.0`
+}
+
+botton2.addEventListener('click', calculatepredict)
+
+function calculatepredict() {
+  let user= username.value
+  let note1 = Number(data1.value)
+  let note2 = Number(data2.value)
+  let resultpredict = (3.5-((note1 * 0.3) + (note2 * 0.3))) / 0.4
+  let resultpredictfx = resultpredict.toFixed(2)
+
+  answer.textContent=`Hola ${user} para ganar la materia, en la nota 3 tiene que sacar:  ${resultpredictfx}`
+  answer.style.color='black';
 }
